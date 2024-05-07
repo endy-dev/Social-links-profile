@@ -1,0 +1,14 @@
+---
+interface Props {
+  type?: "primary" | "accent";
+  href?: string;
+  classes?: string;
+}
+const { type, href, classes } = Astro.props;
+let Element: keyof HTMLElementTagNameMap = "button";
+if (href) Element = "a";
+---
+
+<Element href={href} class:list={["btn", classes]} data-type={type}>
+  <slot />
+</Element>

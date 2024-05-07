@@ -1,0 +1,56 @@
+@use "base";
+@use "components";
+
+body {
+  width: 100svw;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(212, 45%, 89%);
+}
+
+.card {
+  padding: 1.5rem;
+  width: min(350px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 0 black;
+
+  &__icon {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    .button {
+      width: fit-content;
+    }
+    .heading-3 {
+      text-decoration: none;
+      &:is(:hover, :focus) {
+        color: yellow;
+      }
+    }
+  }
+
+  &__published {
+    font-size: 0.875rem;
+  }
+
+  &__avatar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 900;
+  }
+}
